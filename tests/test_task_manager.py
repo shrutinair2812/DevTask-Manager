@@ -1,5 +1,5 @@
-from app.task_manager import add_task, get_tasks
-from app.task_manager import complete_task
+from app.task_manager import add_task, complete_task, get_tasks
+
 
 def test_add_task():
     tasks = []

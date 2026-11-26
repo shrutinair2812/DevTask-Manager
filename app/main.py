@@ -1,6 +1,5 @@
-
-from app.task_manager import add_task, get_tasks
 from app.storage import load_tasks, save_tasks
+from app.task_manager import add_task, get_tasks
 
 
 def main():
