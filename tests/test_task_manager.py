@@ -1,5 +1,5 @@
 from app.task_manager import add_task, get_tasks
-
+from app.task_manager import complete_task
 
 def test_add_task():
     tasks = []
@@ -45,3 +45,22 @@ def test_get_tasks():
     result = get_tasks(tasks)
 
     assert result == tasks
+
+def test_complete_task():
+    tasks = [
+        {"id": 1, "title": "Learn Python", "completed": False}
+    ]
+
+    task = complete_task(tasks, 1)
+
+    assert task["completed"] is True
+
+
+def test_complete_task_with_invalid_id():
+    tasks = []
+
+    try:
+        complete_task(tasks, 99)
+        assert False, "Expected ValueError for an invalid task ID"
+    except ValueError as error:
+        assert str(error) == "Task not found."
