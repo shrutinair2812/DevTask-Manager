@@ -2,7 +2,6 @@
 import json
 from pathlib import Path
 
-
 # Locate the project's data/tasks.json file
 DATA_FILE = Path(__file__).resolve().parent.parent / "data" / "tasks.json"
 
