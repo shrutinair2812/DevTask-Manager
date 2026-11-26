@@ -20,3 +20,13 @@ def get_tasks(tasks):
     """Return all available tasks."""
 
     return tasks
+
+def complete_task(tasks, task_id):
+    """Mark a task as completed."""
+
+    for task in tasks:
+        if task["id"] == task_id:
+            task["completed"] = True
+            return task
+
+    raise ValueError("Task not found.")
